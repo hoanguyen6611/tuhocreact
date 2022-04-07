@@ -14,17 +14,11 @@ const Game = () => {
         setBoard(boardCopy);
         setXIsNext(!xIsNext);
     };
-    const handleResetGame = ()=> {
-        setBoard(Array(9).fill(null));
-        setXIsNext(true);
-    }
+    const handleResetGame = 
     return (
         <div>
         <Board cells={board} onClick={handleClick}></Board>
-        {winner &&<div className="game-winner">
-            Winner is {winner}
-        </div>}
-        <button className="game-reset"onClick={handleResetGame}>Reset Game</button>
+        <button onClick={handleResetGame}>Reset Game</button>
         </div>
     );
 };
