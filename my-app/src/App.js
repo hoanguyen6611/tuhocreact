@@ -1,11 +1,10 @@
 import './App.css';
-import Button from './components/button/Button';
+import CardList from './components/card/CardList';
 
 function App() {
   return (
     <div>
-      <Button>Primary</Button>
-      <Button className="button--secondary">Secondary</Button>
+      <CardList></CardList>
     </div>
   );
 }
