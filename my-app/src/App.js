@@ -1,10 +1,12 @@
 import './App.css';
-import CardList from './components/card/CardList';
+import Photos from './components/photo/Photos';
+// import CardList from './components/card/CardList';
+// import CardTailwind from './components/card/CardTailwind';
 
 function App() {
   return (
     <div>
-      <CardList></CardList>
+      <Photos></Photos>
     </div>
   );
 }

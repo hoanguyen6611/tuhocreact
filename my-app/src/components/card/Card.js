@@ -1,9 +1,8 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 
 const StyledCard = styled.div`
     position: relative;
-    width: 400px;
 `;
 const CardImage = styled.div`
     height: 400px;
@@ -55,26 +54,36 @@ const CardFooter = styled.div`
     align-items: center;
 `;
 const CardTitle = styled.h3`
-    font-size: 18px;
+    color: #000000;
+    font-style: normal;
     font-weight: 500;
-    color: black;
+    font-size: 18px;
+    line-height: 27px;
 
 `;
 const CardNumber = styled.span`
     font-size: 18px;
     font-weight: bold;
     background: linear-gradient(86.88deg, #7D6AFF 1.38%, #FFB86C 64.35%, #FC2872 119.91%);
+    ${props => props.secondary && css`
+        background: linear-gradient(86.88deg, #20E3B2, #2cccff);
+    `};
     color: transparent;
     -webkit-background-clip: text;
     background-clip:text ;
 `;
-const UserName = styled.span `
+const UserName = styled.span`
     font-weight: 300;
     font-size: 16px;
     color: #333;
 `;
+const CardMeta = styled.div`
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+`;
 
-const Card = () => {
+const Card = (props) => {
     return (
         <StyledCard>
             <CardImage>
@@ -86,7 +95,10 @@ const Card = () => {
                         <UserAvatar src="https://cdn.dribbble.com/users/759083/screenshots/17188142/media/b6466271f1a2d69ebc50539d993a8877.jpg?compress=1&resize=800x600&vertical=top" alt="" />
                         <UserName>@zndrson</UserName>
                     </CardUser>
-                    <div>256</div>
+                    <CardMeta>
+                        <img src="/iconheart.svg" alt="" />
+                        <span>256</span>
+                    </CardMeta>
                 </CardTop>
                 <CardFooter>
                     <CardTitle>Cosmic Perspective</CardTitle>
