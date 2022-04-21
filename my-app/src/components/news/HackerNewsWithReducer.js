@@ -76,7 +76,12 @@ const HackerNewsWithReducer = () => {
                         payload: e.target.value,
                     })}
                 />
-                <button className="bg-blue-500 text-white font-semibold p-5 rounded-md flex-shrink-0"
+                <button
+                    disabled={state.loading}
+                    style = {{
+                        opacity: state.loading ? '0.5':'1'
+                    }}
+                    className="bg-blue-500 text-white font-semibold p-5 rounded-md flex-shrink-0"
                     onClick={() => dispatch({
                         type: "SET_URL",
                         payload: `https://hn.algolia.com/api/v1/search?query=${state.query}`,
