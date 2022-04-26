@@ -1,11 +1,11 @@
 import './App.css';
-import Dropdown from './components/Dropdown';
+import Blog from './components/Blog';
 
 function App() {
   
   return (
     <div className="p-5">
-      <Dropdown></Dropdown>
+      <Blog></Blog>
     </div>
   );
 }
