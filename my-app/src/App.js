@@ -1,11 +1,11 @@
 import './App.css';
-import TextareaAutoResize from './components/TextareaAutoResize';
+import Dropdown from './components/Dropdown';
 
 function App() {
   
   return (
-    <div>
-      <TextareaAutoResize></TextareaAutoResize>
+    <div className="p-5">
+      <Dropdown></Dropdown>
     </div>
   );
 }
