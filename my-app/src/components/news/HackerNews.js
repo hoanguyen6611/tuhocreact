@@ -9,12 +9,22 @@ const HackerNews = () => {
     const [errorMessage, setErrorMessage] = useState("");
     const [url, setUrl] = useState(`https://hn.algolia.com/api/v1/search?query=${query}`);
     const handleFetchData = useRef({});
+    const isCounted = useRef(true);
+    useEffect(() => {
+        return () => {
+            isCounted.current = false;
+        }
+    })
     handleFetchData.current = async () => {
         setLoading(true);
         try {
             const response = await axios.get(url);
-            setHits(response.data?.hits || []);
-            setLoading(false);
+            setTimeout(() => {
+                if (isCounted.current) {
+                    setHits(response.data?.hits || []);
+                    setLoading(false);
+                }
+            }, 3000);
         }
         catch (e) {
             setLoading(false);
@@ -44,7 +54,7 @@ const HackerNews = () => {
             <div className="flex flex-wrap gap-5">
                 {!loading && hits.length > 0 &&
                     hits.map((items, index) => {
-                        if (!items.title ||items.title.length <= 0) return null;
+                        if (!items.title || items.title.length <= 0) return null;
                         return (
                             <h3 className="p-3 bg-gray-300 rounded-md" key={items.title}>{items.title}</h3>);
                     })}
