@@ -6,8 +6,8 @@ const StopWatch = () => {
     const handleStart = () => {
         if (timerRef.current) return;
         timerRef.current = setInterval(() => {
-            setCount((counter) => counter + 1)
-        }, 1000)
+            setCount((counter) => counter + 1);
+        }, 1000);
     };
     const handleStop = () => {
         clearInterval(timerRef.current);
