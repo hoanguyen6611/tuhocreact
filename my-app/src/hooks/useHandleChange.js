@@ -9,7 +9,7 @@ export default function useHandleChange(initialValue) {
     });
   };
   return {
-      values,
-      handleChange
-  }
+    values,
+    handleChange,
+  };
 }
