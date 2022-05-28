@@ -1,5 +1,5 @@
 import React from 'react';
-import useClickOutSide from '../hooks/useClickOutSide';
+import useClickOutSide from './../../hooks/useClickOutSide';
 
 const Dropdown = () => {
     const {
