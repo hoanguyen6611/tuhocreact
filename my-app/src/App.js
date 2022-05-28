@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Modal from './components/modal/Modal';
-// import DropdownPortal from "./components/other/DropdownPortal";
+import DropdownPortal from "./components/other/DropdownPortal";
 // import Tooltip from "./components/other/Tooltip";
 
 function App() {
@@ -20,9 +20,9 @@ function App() {
       <div className="relative z-30 m-5">
         Lorem ipsum dolor sit amet, consectetur adip
       </div>
-      {/* <div className="overflow-hidden m-5">
+      <div className="overflow-hidden m-5">
       <DropdownPortal></DropdownPortal>
-      </div> */}
+      </div>
       {/* <div className="m-10">
         <Tooltip></Tooltip>
       </div> */}
