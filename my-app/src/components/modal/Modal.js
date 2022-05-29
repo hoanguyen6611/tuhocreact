@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import PropTypes from "prop-types";
 
 const Modal = ({ open = false, handleClose = () => {} }) => {
   if (typeof document === "undefined") return <div className="modal"></div>;
@@ -14,7 +15,10 @@ const Modal = ({ open = false, handleClose = () => {} }) => {
         onClick={handleClose}
       ></div>
       <div className="modal-content bg-white relative z-10 p-10 rounded-lg w-full max-w-[482px]">
-        <span onClick={handleClose} className="absolute top-0 right-0 flex items-center justify-center w-10 h-10 p-1 bg-white rounded-full cursor-pointer -translate-y-2/4 translate-x-2/4">
+        <span
+          onClick={handleClose}
+          className="absolute top-0 right-0 flex items-center justify-center w-10 h-10 p-1 bg-white rounded-full cursor-pointer -translate-y-2/4 translate-x-2/4"
+        >
           <svg
             width="14"
             height="14"
@@ -58,6 +62,10 @@ const Modal = ({ open = false, handleClose = () => {} }) => {
     </div>,
     document.querySelector("body")
   );
+};
+Modal.propTypes = {
+  open: PropTypes.bool.isRequired,
+  handleClose: PropTypes.func.isRequired,
 };
 
 export default Modal;
